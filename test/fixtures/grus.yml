@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigoServico: 1
+  referencia: MyString
+  competencia: MyString
+  vencimento: MyString
+  cnpjCpf: MyString
+  nomeContribuinte: MyString
+  valorPrincipal: 1
+  valorDescontos: 1
+  valorOutrasDeducoes: 1
+  valorMulta: 1
+  valorJuros: 1
+  valorOutrosAcrescimos: 1
+  urlRetorno: MyString
+  urlNotificacao: MyString
+  modoNavegacao: 1
+  expiracaoPix: MyString
+
+two:
+  codigoServico: 1
+  referencia: MyString
+  competencia: MyString
+  vencimento: MyString
+  cnpjCpf: MyString
+  nomeContribuinte: MyString
+  valorPrincipal: 1
+  valorDescontos: 1
+  valorOutrasDeducoes: 1
+  valorMulta: 1
+  valorJuros: 1
+  valorOutrosAcrescimos: 1
+  urlRetorno: MyString
+  urlNotificacao: MyString
+  modoNavegacao: 1
+  expiracaoPix: MyString
