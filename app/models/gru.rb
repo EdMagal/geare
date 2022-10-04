@@ -1,3 +1,3 @@
 class Gru < ApplicationRecord
-  belongs_to :user, dependent: :destroys
+  belongs_to :user, dependent: :destroy
 end

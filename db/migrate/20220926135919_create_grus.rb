@@ -17,7 +17,9 @@ class CreateGrus < ActiveRecord::Migration[7.0]
       t.string :urlNotificacao
       t.integer :modoNavegacao
       t.string :expiracaoPix
-
+      t.integer :status
+      t.integer :user_id, null: false, foreign_key: true
+      t.integer :created_by, null: false, foreign_key: { to_table: :user }
       t.timestamps
     end
   end
