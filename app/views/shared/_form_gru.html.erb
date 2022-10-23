@@ -1,0 +1,20 @@
+<!-- Form that allows the user to create a GRU instance and associate it to another user. -->
+<% if policy(current_user).admin? %>
+  <%= simple_form_for(@gru, method: :post, url: gru_index_path) do |f| %>
+    <%= f.input :nomeContribuinte, label: 'Nome e Sobrenome do contribuinte', error: 'O nome é obrigatório e precisa ter pelo menos 3 caracteres' %>
+    <%= f.input :cnpjCpf, label: "CPF ou CNPJ", placeholder: 'CPF/CNPJ' %>
+    <%= f.input :referencia, label: "Número de Referência" %>
+    <%= f.input :codigoServico, label: "Código de Serviço", required: true %>
+    <%= f.input :competencia, label: "Competência (MM/AAAA)" %>
+    <%= f.input :vencimento, label: "Data de Vencimento" %>
+    <%= f.input :valorPrincipal, label: "Valor Principal", required: true %>
+    <%= f.input :valorDescontos, label: "Descontos" %>
+    <%= f.input :valorOutrasDeducoes, label: "Outras Deduções" %>
+    <%= f.input :valorMulta %>
+    <%= f.input :valorJuros %>
+    <%= f.input :valorOutrosAcrescimos %>
+    <%= f.input :expiracaoPix %>
+    <%= f.association :user, collection: User.all, label_method: :email, value_method: :id, label: 'Usuário' %>
+    <%= f.button :submit %>
+  <% end %>
+<% end %>

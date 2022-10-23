@@ -1,1 +1,23 @@
 Página de geração de Guia de Recolhimento da União Digital
+
+Por favor faça um login para acessar o sistema.
+
+<% unless @grus.empty? %>
+  <table>
+  <tr>
+    <th>Usuário</th>
+    <th>Código de Serviço</th>
+    <th>Valor Total</th>
+    <th>Detalhe</th>
+  </tr>
+
+    <% @grus.each do |gr| %>
+      <tr>
+        <td><%= gr.user.email %></td>
+        <td><%= gr.codigoServico %></td>
+        <td><%= gr.valorPrincipal %></td>
+        <td><%= link_to 'Detalhar', gru_path(gr) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

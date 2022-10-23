@@ -1,0 +1,65 @@
+<h2>Informação da GRU:</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Código de Serviço</th>
+      <td><%= @gru.codigoServico %></td>
+    </tr>
+    <tr>
+      <th scope="row">Nome Contribuinte</th>
+      <td><%= @gru.nomeContribuinte %></td>
+    </tr>
+    <tr>
+      <th scope="row">CPF ou CNPJ</th>
+      <td><%= @gru.cnpjCpf %></td>
+    </tr>
+    <tr>
+      <th scope="row">Número de Referência</th>
+      <td><%= @gru.referencia %></td>
+    </tr>
+    <tr>
+      <th scope="row">Competência</th>
+      <td><%= @gru.competencia %></td>
+    </tr>
+    <tr>
+      <th scope="row">Data de Vencimento</th>
+      <td><%= @gru.vencimento %></td>
+    </tr>
+    <tr>
+      <th scope="row">Valor Principal</th>
+      <td><%= @gru.valorPrincipal %></td>
+    </tr>
+    <tr>
+      <th scope="row">Descontos</th>
+      <td><%= @gru.valorDescontos %></td>
+    </tr>
+    <tr>
+      <th scope="row">Outras Deduções</th>
+      <td><%= @gru.valorOutrasDeducoes %></td>
+    </tr>
+    <tr>
+      <th scope="row">Descontos</th>
+      <td><%= @gru.valorDescontos %></td>
+    </tr>
+    <tr>
+      <th scope="row">Multa</th>
+      <td><%= @gru.valorMulta %></td>
+    </tr>
+    <tr>
+      <th scope="row">Juros</th>
+      <td><%= @gru.valorJuros %></td>
+    </tr>
+    <tr>
+      <th scope="row">Outros Acréscimos</th>
+      <td><%= @gru.valorOutrosAcrescimos %></td>
+    </tr>
+    <tr>
+      <th scope="row">Situação</th>
+      <td><%= @gru.status %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= button_to "Pagar", gru_index_path %>
+<%= link_to "Voltar", gru_index_path %>

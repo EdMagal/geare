@@ -3,8 +3,14 @@
     <li>Home</li>
     <li>
       <%= link_to "Log in",  new_user_session_path unless user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path if user_signed_in? data: {turbo_method: :delete} %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete if user_signed_in? %>
     </li>
+    <% if user_signed_in? %>
+      <li> Mostrar GRU </li>
+      <% if policy(current_user).admin? %>
+        <li><%= link_to "Nova Guia de Recolhimento", new_gru_path %></li>
+      <% end %>
+    <% end %>
   </ul>
 </nav>
 </ br>
