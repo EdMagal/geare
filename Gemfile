@@ -33,6 +33,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 # gem "redis", "~> 4.0"
 gem "devise"
 gem "pundit"
+gem "httparty"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

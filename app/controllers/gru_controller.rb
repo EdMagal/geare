@@ -1,5 +1,5 @@
 class GruController < ApplicationController
-  before_action :set_gru, only: [:show, :edit, :update, :destroy]
+  before_action :set_gru, only: [:show, :edit, :update, :destroy, :pagamento]
 
   # CREATE
   def new
@@ -13,6 +13,22 @@ class GruController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  # POST
+  def pagamento
+    apiUrl = 'https://valpagtesouro.tesouro.gov.br/api/gru/solicitacao-pagamento'
+    apiHeader = {
+      'Content-Type' => 'application/json',
+      'Accept' => 'application/json',
+      'Authorization' => 'Bearer ' + ENV['TEST_TOKEN']
+    }
+    raise
+    response = HTTParty.post(
+      url,
+      :headers => {'cache-control': 'no-cache','content-type': 'application/json'},
+      :body => {"mfkep":"some text"}.to_json
+    )
   end
 
   # READ
