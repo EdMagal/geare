@@ -1,3 +1,13 @@
+ <style>
+    .iframe-epag {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 1px;
+        min-width: 100%;
+    }
+</style>
+
 <h2>Informação da GRU:</h2>
 
 <table>
@@ -62,4 +72,17 @@
 </table>
 
 <%= button_to "Pagar", pagamento_gru_index_path(@gru) %>
+
+<% if response["proximaUrl"] %>
+  <iframe class="iframe-epag"
+    src="<%= response["proximaUrl"] %>"
+    scrolling="no">
+  </iframe>
+<% end %>
+
 <%= link_to "Voltar", gru_index_path %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.6/iframeResizer.min.js"></script>
+<script>
+  iFrameResize({ heightCalculationMethod: "documentElementOffset" }, ".iframe-epag");
+</script>

@@ -23,11 +23,27 @@ class GruController < ApplicationController
       'Accept' => 'application/json',
       'Authorization' => 'Bearer ' + ENV['TEST_TOKEN']
     }
-    raise
+    apiBody = {
+      "codigoServico": @gru.codigoServico,
+      "referencia": @gru.referencia,
+      "competencia": @gru.competencia,
+      "vencimento": @gru.vencimento,
+      "cnpjCpf": @gru.cnpjCpf,
+      "nomeContribuinte": @gru.nomeContribuinte,
+      "valorPrincipal": @gru.valorPrincipal,
+      "valorDescontos": @gru.valorDescontos,
+      "valorOutrasDeducoes": @gru.valorOutrasDeducoes,
+      "valorMulta": @gru.valorMulta,
+      "valorJuros": @gru.valorJuros,
+      "valorOutrosAcrescimos": @gru.valorOutrosAcrescimos,
+      "modoNavegacao": "2",
+      "urlNotificacao": ""
+    }.to_json
+
     response = HTTParty.post(
-      url,
-      :headers => {'cache-control': 'no-cache','content-type': 'application/json'},
-      :body => {"mfkep":"some text"}.to_json
+      apiUrl,
+      :headers => apiHeader,
+      :body => apiBody
     )
   end
 
