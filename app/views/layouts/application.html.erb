@@ -15,5 +15,12 @@
     <p class="alert"><%= alert %></p>
     <%= render "shared/navbar" %>
     <%= yield %>
+
+    <!-- PagTesouro API - scripts necessários -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.6/iframeResizer.min.js"></script>
+<script>
+  iFrameResize({ heightCalculationMethod: "documentElementOffset" }, ".iframe-epag");
+</script>
+
   </body>
 </html>

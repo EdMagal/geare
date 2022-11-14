@@ -1,6 +1,7 @@
 class GruController < ApplicationController
   before_action :set_gru, only: [:show, :edit, :update, :destroy, :pagamento]
 
+
   # CREATE
   def new
     @gru = Gru.new
@@ -45,6 +46,11 @@ class GruController < ApplicationController
       :headers => apiHeader,
       :body => apiBody
     )
+
+    render inline: "<iframe class='iframe-epag'
+      src='#{response["proximaUrl"]}'
+      scrolling='no'>
+      </iframe>"
   end
 
   # READ
@@ -76,5 +82,4 @@ class GruController < ApplicationController
   def set_gru
     @gru = Gru.find(params[:id])
   end
-
 end
