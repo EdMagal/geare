@@ -1,0 +1,30 @@
+// Specific CSS for your home-page
+body {
+  background-color: hsl(0, 0%, 80%);
+  background-size: cover;
+ }
+
+ body::after {
+  content: "";
+  background: url("https://source.unsplash.com/xoU52jUVUXA");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+}
+
+span {
+  background-color: hsl(0, 1%, 14%);
+  border-radius: 0,5rem;
+}
+.typed-fade-out {
+  color: rgb(255, 255, 255);
+}
+
+.notice {
+  display: none !important;
+}

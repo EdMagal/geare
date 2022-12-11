@@ -1,0 +1,20 @@
+#navbar {
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+}
+
+.navbar-marketplace {
+  justify-content: space-between;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-marketplace .navbar-brand img {
+  width: 60px;
+}
+
+
+
