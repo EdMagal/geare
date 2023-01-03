@@ -1,7 +1,6 @@
 class GruController < ApplicationController
   before_action :set_gru, only: [:show, :edit, :update, :destroy, :pagamento]
 
-
   # CREATE
   def new
     @gru = Gru.new
@@ -24,6 +23,7 @@ class GruController < ApplicationController
       'Accept' => 'application/json',
       'Authorization' => 'Bearer ' + ENV['TEST_TOKEN']
     }
+
     apiBody = {
       "codigoServico": @gru.codigoServico,
       "referencia": @gru.referencia,
@@ -56,7 +56,10 @@ class GruController < ApplicationController
   # READ
   def index
     @grus = Gru.all
-    @user = current_user
+    if user_signed_in?
+      @user = current_user
+      @grus = @grus.filter { |gru| gru.user_id == @user.id } unless current_user.admin
+    end
   end
 
   def show

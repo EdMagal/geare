@@ -7,6 +7,8 @@
     <% if user_signed_in? %>
       <li class="nav-item"> Mostrar GRU </li>
       <% if policy(current_user).admin? %>
+
+        <!-- NOVA GUIA button -->
         <li class="nav-item"><%= link_to "Nova Guia de Recolhimento", new_gru_path, class: "nav-link active" %></li>
       <% end %>
     <% end %>
